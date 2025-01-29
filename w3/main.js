@@ -1,9 +1,7 @@
 
 let carbonfootprintPoints = 0;
-// const numberInHousehold = 2;
 
 function insideF(numberInHousehold) {
-  console.log(`Inside the function`);
   if (numberInHousehold === 1){
     carbonfootprintPoints = carbonfootprintPoints + 14;
 } else if (numberInHousehold === 2) {
@@ -30,5 +28,26 @@ function insideF(numberInHousehold) {
 }
 
 insideF(3);
-insideF(4);
-insideF(5);
+
+// If you have a large house, then add 10 points to your score.
+// If you have a medium-sized house, then add 7 points.
+// If you have a small house, then add 4 points.
+// If you live in an apartment, then add 2 points.
+
+function carbonHouse(typeHouse) {
+  if (typeHouse === "large") {
+    carbonfootprintPoints = carbonfootprintPoints + 10;
+  }
+  else if (typeHouse === "medium") {
+    carbonfootprintPoints = carbonfootprintPoints + 7;
+  }
+  else if (typeHouse === "small") {
+    carbonfootprintPoints = carbonfootprintPoints + 4;
+  }
+  else if (typeHouse === "apartment") {
+    carbonfootprintPoints = carbonfootprintPoints + 2;
+  }
+  console.log(`Your house type is ${typeHouse} and your carbon footprint points are ${carbonfootprintPoints}.`);
+}
+
+carbonHouse("apartment");

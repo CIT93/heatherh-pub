@@ -50,18 +50,24 @@ function start(people,size) {
 }
 
 function displayOutput(){
-  
+  for (arr of cfpData) {
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `The amount of people is ${arr[0]} and the people points: ${arr[2]}. The size of the house is ${arr[1]} and the size points: ${arr[3]}. The total carbon footprint points: ${arr[4]}`;
+    output.appendChild(newP);
+  }
+
 }
 
 start(5, "medium");
 start (3, "large");
 start(2, "small");
-start(1, "medium");
+start(1, "apartment");
 start(4, "large");
-start(6, "large");
-start(6, "small");
-start(3, "medium");
+start(6, "medium");
 start(2, "large");
+
 
 displayOutput();
 

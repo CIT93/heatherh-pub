@@ -1,3 +1,40 @@
+function displayPets() {
+  const pets = [
+    {
+      name: "Pikachu",
+      fur: "tabby",
+      behavior: "aggressive",
+    },
+    {
+      name: "Sunshine",
+      fur: "yellow",
+      behavior: "sleepy",
+    },
+    {
+      name: "George",
+      fur: "orange",
+      behavior: "insane",
+    },
+  ]
+
+  const output = document.getElementById("output");
+  
+  for (obj of pets) {
+    const newP = document.createElement("p");
+    
+    newP.textContent = `${obj.name} is always ${obj.behavior} and has ${obj.fur} colored fur`;
+    
+    output.appendChild(newP);
+     
+  }
+  const newH2 = document.createElement("h2");
+  newH2.innerHTML = "<p>&nbsp</p>";
+  output.appendChild(newH2); 
+}
+
+
+displayPets();
+
 const cfpData = [];
 
 function determineHouseSizePts(size) {
@@ -51,9 +88,8 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
+  const output = document.getElementById("output");
   for (obj of cfpData) {
-    console.log(obj);
-    const output = document.getElementById("output");
     const newP = document.createElement("p");
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon Footprint total is ${obj.cfptotal}`;

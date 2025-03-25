@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 6 Private - Arrays of Objects</title>
+  <script src="main.js" defer type="module"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <form id="form">
+    <fieldset>
+    <legend>Calculating your Carbon Footprint</legend>
+    <div>
+      <label for="">First Name: </label>
+    <input type="text"  name="firstname" required>
+  
+  </div>
+  <div>
+    <label for="">Last Name: </label>
+    <input type="text" name="lastname" required>
+  </div>
+
+    <div>
+      <label for="">Count the members of your household </label>
+    <input type="number"  size="2" min="1" max="6" name="housem" required>
+  
+  </div>
+  <div>
+    <label for="">Consider the size of your home </label>
+    <select name="houses" required>
+      <option value="">---Please enter size of home---</option>
+      <option value="apt">Apartment</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+  </select>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+  </fieldset>
+  </form>
+
+  <div id="output"></div>
+  <div id="tbl-data"></div>
+  <!-- <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Household</th>
+      <th>House size</th>
+      <th>Carbon Footprint</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eowyn</td>
+      <td>3</td>
+      <td>large</td>
+      <td>10</td>
+      <td><button>Edit</button>
+        <button>Del</button></td>
+    </tr>
+    <tr>
+      <td>Eowyn</td>
+      <td>3</td>
+      <td>large</td>
+      <td>10</td>
+      <td><button>Edit</button>
+        <button>Del</button></td>
+    </tr>
+  </tbody>
+  </table> -->
+</body>
+</html>
+

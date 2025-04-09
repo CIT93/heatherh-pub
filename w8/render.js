@@ -22,9 +22,9 @@ function renderTblHeading(data) {
 }
 }
 
-function popForm(cfpData) {
-  console.log(cfpData.firName);
-  FORM[3].textContent = cfpData.houseM;
+function popForm() {
+  // console.log(cfpData.firName);
+  FORM[3].value = 4;
 }
 
 function renderBtns(index, data) {
@@ -39,8 +39,8 @@ function renderBtns(index, data) {
     data.splice(index, 1);
     renderTbl(data);
   });
-  btnEdit.addEventListener("click", function(e) {
-    popForm(data);
+  btnEdit.addEventListener("click", function(e){
+    popForm();
   });
   return td;
 }

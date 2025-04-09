@@ -1,6 +1,11 @@
+import {FORM, cfpData} from "./main.js";
+
 const TBL = document.getElementById("tbl-data");
 
-function renderTblHeading() {
+function renderTblHeading(data) {
+  if (data.length === 0) {
+    TBL.innerHTML = "";
+  } else {
   TBL.innerHTML = "";
   const table = document.createElement("table");
   const thead = document.createElement("thead");
@@ -15,6 +20,12 @@ function renderTblHeading() {
   table.appendChild(thead);
   return table;
 }
+}
+
+function popForm(cfpData) {
+  console.log(cfpData.firName);
+  FORM[3].textContent = cfpData.houseM;
+}
 
 function renderBtns(index, data) {
   const td = document.createElement("td");
@@ -25,21 +36,21 @@ function renderBtns(index, data) {
   td.appendChild(btnEdit);
   td.appendChild(btnDel);
   btnDel.addEventListener("click", function(e){
-    console.log("hello from the del button");
     data.splice(index, 1);
-    console.log(data);
     renderTbl(data);
   });
   btnEdit.addEventListener("click", function(e) {
-    
+    popForm(data);
   });
   return td;
 }
 
+
+
 function renderBody(data) {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
-    console.log(index);
+    // console.log(index);
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
       
@@ -58,7 +69,7 @@ function renderBody(data) {
 }
 
 function renderTbl(data) {
-  const table = renderTblHeading();
+  const table = renderTblHeading(data);
   const tbody = renderBody(data);
   table.appendChild(tbody);
   TBL.appendChild(table);

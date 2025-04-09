@@ -39,3 +39,4 @@ FORM.addEventListener("submit", function(e){
   FORM.reset();
 });
 
+export {FORM, cfpData};

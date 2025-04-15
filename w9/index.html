@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 9 Private - Prof. Waller solution</title>
+  <script src="main.js" defer type="module"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <form id="form">
+    <fieldset>
+    <legend>Calculating your Carbon Footprint</legend>
+    <div>
+      <label for="firstname">First Name: </label>
+    <input type="text"  name="firstname" id="firstname">
+    <span id="firstnameError" class="error" role="alert"></span>
+
+  </div>
+  <div>
+    <label for="lastname">Last Name: </label>
+    <input type="text" name="lastname" id="lastname">
+    <span id="lastnameError" class="error" role="alert"></span>
+
+  </div>
+
+    <div>
+      <label for="housem">Count the members of your household </label>
+    <input type="number"  size="2" min="1" max="6" name="housem" id="housem">
+  
+  </div>
+  <div>
+    <label for="houses">Consider the size of your home </label>
+    <select name="houses" id="houses">
+      <option value="">---Please enter size of home---</option>
+      <option value="apt">Apartment</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+  </select>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+  </fieldset>
+  </form>
+
+ 
+  <div id="tbl-data"></div>
+  <!-- <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Household</th>
+      <th>House size</th>
+      <th>Carbon Footprint</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eowyn</td>
+      <td>3</td>
+      <td>large</td>
+      <td>10</td>
+      <td><button>Edit</button>
+        <button>Del</button></td>
+    </tr>
+    <tr>
+      <td>Eowyn</td>
+      <td>3</td>
+      <td>large</td>
+      <td>10</td>
+      <td><button>Edit</button>
+        <button>Del</button></td>
+    </tr>
+  </tbody>
+  </table> -->
+</body>
+</html>
+

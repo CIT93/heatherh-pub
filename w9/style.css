@@ -27,5 +27,11 @@ tbody tr:nth-child(odd) {
   color: red;
 }
 .invalid {
-  color: blue;
+  border-color: red;
+}
+.error {
+  color: red;
+}
+#submitError {
+  color: red;
 }

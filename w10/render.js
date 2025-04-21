@@ -2,12 +2,12 @@
 import { FORM, TBL } from "./global.js";
 import { saveLS } from "./storage.js";
 
-const renderTblHeading = (data) => {
+const renderTblHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTxtArr = ["Name", "Members", "Size", "CFP", "Action"];
-  headingTxtArr.forEach(function (text) {
+  headingTxtArr.forEach(text => {
     const th = document.createElement("th");
     th.textContent = text;
     tr.appendChild(th);
@@ -47,7 +47,7 @@ const renderBtns = (obj, index, data) => {
 
 const renderBody = (data) => {
   const tbody = document.createElement("tbody");
-  data.forEach(function (obj, index) {
+  data.forEach( (obj, index) => {
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
       
@@ -68,7 +68,7 @@ const renderBody = (data) => {
 const renderTbl = (data) => {
   TBL.innerHTML = "";
   if (data.length !== 0) {
-  const table = renderTblHeading(data);
+  const table = renderTblHeading();
   const tbody = renderBody(data);
   table.appendChild(tbody);
   TBL.appendChild(table);

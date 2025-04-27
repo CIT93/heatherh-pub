@@ -1,1 +1,0 @@
-I already knew about returning a value from a function and capturing it with a variable, but it's always good to review.

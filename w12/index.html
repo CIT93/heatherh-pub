@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 11 Pri - Carbon Footprint</title>
+  <script src="main.js" defer type="module"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <form id="form">
+    <fieldset>
+    <legend>Calculating your Carbon Footprint</legend>
+    <div>
+      <label for="firstname">First Name: </label>
+    <input type="text"  name="firstname" id="firstname">
+    <span id="firstnameError" class="error"></span>
+
+  </div>
+  <div>
+    <label for="lastname">Last Name: </label>
+    <input type="text" name="lastname" id="lastname">
+    <span id="lastnameError" class="error"></span>
+
+  </div>
+
+    <div>
+      <label for="housem">Count the members of your household </label>
+    <input type="number"  size="2" min="1" max="6" name="housem" id="housem" required>
+  
+  </div>
+  <div>
+    <label for="houses">Consider the size of your home </label>
+    <select name="houses" id="houses" required>
+      <option value="">---Please enter size of home---</option>
+      <option value="apt">Apartment</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+  </select>
+  </div>
+  
+  <div>
+    <label for="foodC">Consider your food choices</label>
+    <select name="foodC" id="foodC" required>
+      <option value="">---Please enter food choice---</option>
+      <option value="dailyMeat">Domestic meat daily</option>
+      <option value="fewMeat">Domestic meat occasionally</option>
+      <option value="vege">Vegetarian</option>
+      <option value="vegan">Vegan</option>
+  </select>
+  </div>
+  <div>
+    <button type="submit">Submit</button><br>
+    <span id="submitError" class="error"></span>
+  </div>
+  </fieldset>
+  </form>
+
+ 
+  <div id="tbl-data"></div>
+</body>
+</html>
+
+<!---->

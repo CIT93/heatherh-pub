@@ -1,4 +1,4 @@
- const FORM = document.getElementById("form");
+  const FORM = document.getElementById("form");
 const DIV1 = document.getElementById("workoutOutput");
 const DIV2 = document.getElementById("asyncOutput");
 

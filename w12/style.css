@@ -1,37 +1,10 @@
-html {
-  font-size: 22px;
-}
 body {
   background-color: black;
-  color: whitesmoke;
-}
-input:in-range {
-  background-color: green;
-}
-input:out-of-range {
-  background-color: red;
-}
-table, th, td {
-  border: 1px solid;
-  padding: 5px;
-}
-tbody tr:nth-child(odd) {
-  background-color: blue;
+  color: antiquewhite;
+  font-size: larger;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-#firstnameError {
-  color: red;
-}
-
-#lastnameError {
-  color: red;
-}
-.invalid {
-  border-color: red;
-}
-.error {
-  color: red;
-}
-#submitError {
-  color: red;
+#black {
+  color: black;
 }

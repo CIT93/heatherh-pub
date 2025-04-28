@@ -1,44 +1,22 @@
-import { renderTbl } from "./render.js";
-import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
-import { cfpData, saveLS, getLS } from "./storage.js";
-import { FP } from "./fp.js";
-
-renderTbl(cfpData);
-
-const validateField = (event) => {
-  const field = event.target.value;
-  const fieldId = event.target.id;
-  const fieldError = document.getElementById(`${fieldId}Error`);
-
-  if (field === "") {
-    fieldError.textContent = `${fieldId} is required`;
-    event.target.classList.add("invalid");
-  } else {
-    fieldError.textContent = "";
-    event.target.classList.remove("invalid");
-  }
-};
-
-FNAME.addEventListener("blur", validateField);
-LNAME.addEventListener("blur", validateField);
+const FORM = document.getElementById("form");
+const DIV1 = document.getElementById("workoutOutput");
+const DIV2 = document.getElementById("asyncOutput");
 
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
-  SUBMIT.textContent = "";
+  DIV1.textContent = `Start ${FORM.workout.value} < > Goal reps is ${FORM.reps.value}`;
 
-  if (FNAME.value !== "" && LNAME.value !== "") {
-    const fpObj = new FP(
-      FNAME.value,
-      LNAME.value,
-      parseInt(FORM.housem.value),
-      FORM.houses.value,
-      FORM.foodC.value
-    );
-    cfpData.push(fpObj);
-    saveLS(cfpData);
-    renderTbl(cfpData);
-    FORM.reset();
-  } else {
-    SUBMIT.textContent = "Form requires first name and last name";
+  function repTime(callback) {
+    setTimeout(() => {
+      const repStop = FORM.workout.value;
+      callback(repStop);
+    }, FORM.seconds.value * 1000);
   }
+
+  function stopWorkout(repStop) {
+    DIV2.textContent = `Stop ${repStop}`;
+  }
+
+  repTime(stopWorkout);
+  // console.log(`${FORM.seconds.value}`);
 });

@@ -1,55 +1,38 @@
 const FORM = document.getElementById("form");
-const DIV1 = document.getElementById("workoutOutput");
-const DIV2 = document.getElementById("asyncOutput");
+const OUT = document.getElementById("workoutOutput");
 
-
-function fun1() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("good data")
-    }, 100)
-
-  })
+const updateDOM = (message, el = "h3") => {
+  const newEl = document.createElement(el)
+  newEl.textContent = message
+  OUT.appendChild(newEl)
 }
-function fun2() {
-  console.log("function 2")
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("😍");
-    }, 100)
 
-  })
-}
-function onSuccess(data) {
-    console.log(`Success: ${data}`);
-  }
+const startWorkout = (type, reps, time, fn) => {
+  fn(`Start ${type} <> Goal reps is ${reps} <> complete in ${time} min`, "p")
+  return new Promise ((resolve, reject) => {
+    if (time === 0) {
+      reject(`Error on time selection`)
+    } else {
+    setTimeout(() => {
+      resolve(`Stop ${type}`)
+    }, time * 1000)
+}})
   
-  function onError(errorCode) {
-    console.log(`ERROR: ${errorCode}`);
-  }
+}
 
-  function inTheEnd() {
-    console.log("finally we are done")
-  }
-  fun1()
-  .then(fun2)
-  .then(onSuccess)
-  .catch(onError)
-  .finally(inTheEnd)
-
-
-
-
-
-
-
-
-
-
-
+const onError = (error) => {
+  updateDOM(error)
+}
 
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
+  const type = e.target.type.value
+  const reps = parseFloat(e.target.reps.value)
+  const time = parseFloat(e.target.time.value)
+  startWorkout(type, reps, time, updateDOM)
+    .then(updateDOM)
+    .catch(onError)
+  FORM.reset()
 });
 
   
